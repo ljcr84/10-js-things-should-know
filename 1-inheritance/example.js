@@ -50,6 +50,19 @@ const person = {
     return 'Talking';
   }
 }
+// Looking at the arguments and caller properties in the talk function we get
+// arguments: [Exception: TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them at Function.invokeGetter (<anonymous>:3:28)]
+// caller: [Exception: TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them at Function.invokeGetter (<anonymous>:3:28)]
+
+// But changing the definition
+
+const person = {
+  talk: function () {
+    return 'Talking'
+  }
+}
+
+// We get arguments: null and caller: null
 const me = Object.create(person);
 me.talk(); // Talking
 
