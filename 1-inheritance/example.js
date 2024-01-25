@@ -32,6 +32,7 @@ Person.prototype.talk = function talk() {
 // -----------------------------------------
 // Inheritance using a Constructor Function
 function Person() {};
+// Examining this we find that the Person fuction has a prototype and it seems to be not the same that the class
 Person.prototype.talk = function () {
   return 'Talking';
 }
